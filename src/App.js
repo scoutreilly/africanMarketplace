@@ -3,22 +3,22 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ProtectedRoute from "./helpers/ProtectedRoute";
 import TokenRoute from "./helpers/TokenRoute";
 
-import Home from "./Components/Home";
-import About from "./Components/About";
-import SignUpForm from "./Components/signup";
+import Home from "./components/Home";
+import About from "./components/About";
+import SignUpForm from "./components/signup";
 import ItemContext from "./context/itemContext";
-import ItemList from "./Components/ItemList";
-import ItemForm from "./Components/itemForm";
-import Item from "./Components/item";
-import Login from "./Components/login";
+import ItemList from "./components/ItemList";
+import ItemForm from "./components/itemForm";
+import Item from "./components/item";
+import Login from "./components/login";
 import { axiosWithAuth } from "./helpers/axiosWithAuth";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { useEffect } from "react";
 
-import HeaderOne from "./Components/StyledComponents/H1Styled";
-import Container from "./Components/StyledComponents/ContainerStyled";
-import Nav from "./Components/StyledComponents/NavStyled";
-import StyledLink from "./Components/StyledComponents/LinkStyled";
+import HeaderOne from "./components/StyledComponents/H1Styled";
+import Container from "./components/StyledComponents/ContainerStyled";
+import Nav from "./components/StyledComponents/NavStyled";
+import StyledLink from "./components/StyledComponents/LinkStyled";
 
 import "./App.css";
 
