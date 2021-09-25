@@ -1,122 +1,131 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from "react";
+import axios from "axios";
 
-
+import Container from "./StyledComponents/ContainerStyled";
+import { Form, Label, Input } from "./StyledComponents/FormStyles";
+import HeaderOne from "./StyledComponents/H1Styled";
 
 class SignUpForm extends Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            // first_name: "",
-            // last_name: "",
-            // password: "",
-            // password_confirmation: "",
-            // email: "",
-            //seller: false,
-            username:"" , 
-            password:"", 
-            first_name:"", 
-            last_name:"", 
-            email:""
+    this.state = {
+      // first_name: "",
+      // last_name: "",
+      // password: "",
+      // password_confirmation: "",
+      // email: "",
+      //seller: false,
+      username: "",
+      password: "",
+      first_name: "",
+      last_name: "",
+      email: "",
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-        }
-        this.handleSubmit=this.handleSubmit.bind(this)
-    }
+  changeHandler = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
-    changeHandler = (event) => {
-        this.setState({[event.target.name]: event.target.value})
-    }
+  sellerhandler = (event) => {
+    this.setState({
+      seller:
+        event.target.type === "checkbox"
+          ? event.target.checked
+          : event.target.value,
+    });
+  };
 
-    sellerhandler = (event) => {
-        this.setState({
-            seller: event.target.type === 'checkbox' ? event.target.checked : event.target.value
-        })
-    }
+  handleSubmit = (event) => {
+    event.preventDefault();
 
-    handleSubmit = (event) => {
-        event.preventDefault()
-        
-        axios.post('https://ptct-african-marketplace-5.herokuapp.com/api/auth/register', this.state)
-        .then(res => {
-            console.log("response:", res)
-            window.location.href = "/login";
-        })
-        .catch(err => {
-            console.log("sad path:(", err.response.data)
-        })
+    axios
+      .post(
+        "https://ptct-african-marketplace-5.herokuapp.com/api/auth/register",
+        this.state
+      )
+      .then((res) => {
+        console.log("response:", res);
+        window.location.href = "/login";
+      })
+      .catch((err) => {
+        console.log("sad path:(", err.response.data);
+      });
+  };
 
-        
-    }
+  render() {
+    const { first_name, last_name, password, email, username } = this.state;
+    return (
+      <Container>
+        <Form onSubmit={this.handleSubmit} className="container">
+          <HeaderOne>Sign Up</HeaderOne>
 
+          <Label>First Name :</Label>
+          <Input
+            type="text"
+            name="first_name"
+            value={first_name}
+            onChange={this.changeHandler}
+            placeholder="First Name..."
+          />
+          <br />
 
-    render() {
-        const { first_name, last_name, password, email, username } = this.state
-        return (
-            <div>
-                <form onSubmit={this.handleSubmit} className="container">
-                    <h1>Sign Up</h1>
+          <Label>Last Name :</Label>
+          <Input
+            type="text"
+            name="last_name"
+            value={last_name}
+            onChange={this.changeHandler}
+            placeholder="Last Name..."
+          />
+          <br />
 
-                    <label>First Name :</label> 
-                    <input 
-                        type="text" 
-                        name='first_name'
-                        value={first_name} 
-                        onChange={this.changeHandler} 
-                        placeholder="First Name..." />
-                    <br />
+          <Label>Username:</Label>
+          <Input
+            type="text"
+            name="username"
+            value={username}
+            onChange={this.changeHandler}
+            placeholder="Username..."
+          />
+          <br />
 
-                    <label>Last Name :</label> 
-                    <input 
-                        type="text" 
-                        name='last_name'
-                        value={last_name} 
-                        onChange={this.changeHandler}  
-                        placeholder="Last Name..." />
-                    <br />
+          <Label>Password :</Label>
+          <Input
+            type="password"
+            name="password"
+            value={password}
+            onChange={this.changeHandler}
+            placeholder="Password..."
+          />
+          <br />
 
-                    <label>Username:</label> 
-                    <input 
-                        type="text" 
-                        name='username'
-                        value={username} 
-                        onChange={this.changeHandler}  
-                        placeholder="Username..." />
-                    <br />
+          <Label>Email :</Label>
+          <Input
+            type="text"
+            name="email"
+            value={email}
+            onChange={this.changeHandler}
+            placeholder="Email..."
+          />
+          <br />
 
-                    <label>Password :</label> 
-                    <input 
-                        type="password" 
-                        name='password'
-                        value={password} 
-                        onChange={this.changeHandler}  
-                        placeholder="Password..." />
-                    <br />
-
-                    <label>Email :</label> 
-                    <input 
-                        type="text" 
-                        name='email'
-                        value={email} 
-                        onChange={this.changeHandler}  
-                        placeholder="Email..." />
-                    <br />
-                    
-                    {/* <label>Are you a seller?</label> 
-                    <input 
+          {/* <Label>Are you a seller?</Label> 
+                    <Input 
                         type="checkbox" 
                         name='seller'
                         value={seller} 
                         onChange={this.sellerhandler} 
                         placeholder="Are you a seller?" /> */}
-                    <br />
+          <br />
 
-                    <input type="submit" value="Submit" />
-                </form>
-            </div>
-            
-        )
-    }
+          <Input type="submit" value="Submit" />
+        </Form>
+      </Container>
+    );
+  }
 }
 
-export default SignUpForm
+export default SignUpForm;

@@ -1,12 +1,25 @@
 import React from "react";
+import pic1 from "../images/pic01.jpeg";
+
+import Container from "./StyledComponents/ContainerStyled";
+import HeaderTwo from "./StyledComponents/H2Styled";
+import Image from "./StyledComponents/ImageStyled";
+import { FlexDiv, FlexElement } from "./StyledComponents/FlexStyles";
 
 export default function About() {
   return (
     <div>
-      <div id="aboutIntro">
+      <Container id="aboutIntro">
         {/*change to styled intro */}
-        <h2>OUR STORY</h2>
-        <h3>
+        <FlexDiv className="flexConatiner">
+          <FlexElement>
+            <HeaderTwo style={{ padding: "30% 30%" }}>OUR STORY</HeaderTwo>
+          </FlexElement>
+          <FlexElement>
+            <Image src={pic1} alt="fruit stand" />
+          </FlexElement>
+        </FlexDiv>
+        <h3 style={{ color: "#073421" }}>
           Faucibus a pellentesque sit amet porttitor eget. Blandit volutpat
           maecenas volutpat blandit. Justo eget magna fermentum iaculis eu non
           diam phasellus. Ipsum suspendisse ultrices gravida dictum fusce ut
@@ -24,7 +37,7 @@ export default function About() {
           donec. Faucibus et molestie ac feugiat sed lectus. Mattis enim ut
           tellus elementum sagittis vitae et leo duis.
         </p>
-      </div>
+      </Container>
     </div>
   );
 }

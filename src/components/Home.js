@@ -1,8 +1,14 @@
 import React from "react";
+
 import banner from "../images/banner.jpg";
 import Banner from "./StyledComponents/BannerStyled";
 import HeaderTwo from "./StyledComponents/H2Styled";
+import StyledLink from "./StyledComponents/LinkStyled";
 import Section from "./StyledComponents/SectionStyled";
+import { FlexDiv, FlexElement } from "./StyledComponents/FlexStyles";
+import Image from "./StyledComponents/ImageStyled";
+
+import pic4 from "../images/pic04.jpeg";
 
 export default function Home() {
   return (
@@ -15,11 +21,20 @@ export default function Home() {
           improve their business and economic opportunities to grow out of
           poverty.
         </p>
-        <a href="http://localhost:3000/About">Learn More</a>
+        <StyledLink to="/About">Learn More</StyledLink>
       </Section>
 
       <Section id="one">
-        <HeaderTwo>Why we build technologies for women in trade</HeaderTwo>
+        <FlexDiv>
+          <FlexElement>
+            <HeaderTwo style={{ padding: "22%" }}>
+              Why we build technologies for women in trade
+            </HeaderTwo>
+          </FlexElement>
+          <FlexElement>
+            <Image src={pic4} alt="fruit stand" />
+          </FlexElement>
+        </FlexDiv>
         <p>
           Using technology to empower women-led businesses has ripple effects
           that can help create lasting change for households, communities, and

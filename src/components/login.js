@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import Container from "./StyledComponents/ContainerStyled";
-import Form from "./StyledComponents/FormStyled";
+import { Form, Label, Input } from "./StyledComponents/FormStyles";
 import HeaderOne from "./StyledComponents/H1Styled";
-import Label from "./StyledComponents/LabelStyled";
-import Input from "./StyledComponents/InputStyled";
 
 class Login extends Component {
   constructor(props) {

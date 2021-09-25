@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ProtectedRoute from "./helpers/ProtectedRoute";
 import TokenRoute from "./helpers/TokenRoute";
 
@@ -13,7 +13,7 @@ import Item from "./Components/item";
 import Login from "./Components/login";
 import { axiosWithAuth } from "./helpers/axiosWithAuth";
 import { useLocalStorage } from "./hooks/useLocalStorage";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import HeaderOne from "./Components/StyledComponents/H1Styled";
 import Container from "./Components/StyledComponents/ContainerStyled";
@@ -100,9 +100,8 @@ function App() {
               <TokenRoute path="/login" component={Login} />
               <Route path="/signup" component={SignUpForm} />
               {/*create routes to be used later*/}
-              {/* <Route path="/about" component={About}></Route>
-            <Route path="/login" componnet={Login}></Route> [X] */}
-
+              <Route path="/about" component={About}></Route>
+              <Route path="/login" componnet={Login}></Route> [X]
               <ItemContext.Provider
                 value={{
                   items,
