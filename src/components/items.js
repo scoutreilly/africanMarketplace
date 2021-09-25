@@ -1,112 +1,105 @@
-import React, {useState} from 'react'
-import "../styles/signupForm.css"
+import React, { useState } from "react";
+import "../styles/signupForm.css";
 
+import Container from "./StyledComponents/ContainerStyled";
+import HeaderOne from "./StyledComponents/H1Styled";
+import { Button, Label, Input } from "./StyledComponents/FormStyles";
 
 const ItemForm = () => {
-const [itemFormValues, setItemFormValues] = useState({
-    productName: "", 
-    description: "", 
-    seller_price: 0, 
-    qty: 0
-});
+  const [itemFormValues, setItemFormValues] = useState({
+    productName: "",
+    description: "",
+    seller_price: 0,
+    qty: 0,
+  });
 
-const inputChange = (e) => {
-    
+  const inputChange = (e) => {
     const { name, value } = e.target;
     console.log(`name: ${name}, value: ${value}`);
     const inputValue = value;
-    console.log("inputValue: ", inputValue)
+    console.log("inputValue: ", inputValue);
     setItemFormValues({ ...itemFormValues, [name]: inputValue });
-    } 
+  };
 
-const onFormSubmit = (e) => {
-    console.log('Item Submitted and Displayed on Next Line');
+  const onFormSubmit = (e) => {
+    console.log("Item Submitted and Displayed on Next Line");
     e.preventDefault();
+  };
 
-    
+  return (
+    <>
+      <div className="background-itemForm">
+        <Container className="itemForm-container">
+          <form
+            className="itemForm"
+            onSubmit={onFormSubmit}
+            className="container"
+          >
+            <div className="itemForm-title">
+              <HeaderOne>Items</HeaderOne>
+              <p>Fill out form to put items up for sale</p>
+            </div>
 
-    }
-    
-    return (
-        <>
-        
-            <div className='background-itemForm'>
-            <div className='itemForm-container'>
-            <form className='itemForm' onSubmit={onFormSubmit} className="container">
-                <div className='itemForm-title'>
-                    <h1 >Items</h1>
-                    <p>Fill out form to put items up for sale</p>
-                </div>
+            <Label htmlFor="name">
+              Product name:
+              <Input
+                type="text"
+                name="productName"
+                placeholder="Product's Name"
+                onChange={inputChange}
+                // value={itemFormValues =>{}}
+                value={itemFormValues.productName}
+                label="Product name"
+              />
+            </Label>
 
+            <Label htmlFor="name">
+              Product:
+              <Input
+                type="text"
+                name="description"
+                placeholder="Product description"
+                onChange={inputChange}
+                value={itemFormValues.description}
+                label="product description"
+              />
+            </Label>
 
-            <label htmlFor="name">
-            Product name: 
-                <input
-                    type="text"
-                    name="productName"
-                    placeholder="Product's Name"
-                    onChange={inputChange} 
-                    // value={itemFormValues =>{}}
-                    value={itemFormValues.productName}
-                    label="Product name"
-                />
-            </label>
+            <Label htmlFor="name">
+              Price:
+              <Input
+                type="text"
+                name="seller_price"
+                placeholder="Seller price"
+                onChange={inputChange}
+                value={itemFormValues.seller_price}
+              />
+            </Label>
 
-            
-            <label htmlFor="name">
-            Product: 
-                    <input
-                    type="text"
-                    name="description"
-                    placeholder="Product description"
-                    onChange={inputChange} 
-                    value={itemFormValues.description}
-                    label="product description"
-                />
-                </label>
-
-            
-            <label htmlFor="name">
-            Price:  
-                    <input
-                    type="text"
-                    name="seller_price"
-                    placeholder="Seller price"
-                    onChange={inputChange} 
-                    value={itemFormValues.seller_price}
-                />
-            </label>
-
-            
-            <label htmlFor="name">
-            Qty: 
-                <input
+            <Label htmlFor="name">
+              Qty:
+              <Input
                 type="text"
                 name="qty"
                 placeholder="Qty"
-                onChange={inputChange} 
+                onChange={inputChange}
                 value={itemFormValues.qty}
-                />
-            </label>
+              />
+            </Label>
 
-
-                <div className='itemForm-slider'>
-                    <div className="slider-container">
-
-                    </div>
-                </div>
-
-                <br/>
-                <br/>
-                <button type="submit" id="submitBtn" >Submit</button> 
-
-            </form>
-            </div>
+            <div className="itemForm-slider">
+              <div className="slider-container"></div>
             </div>
 
-            
-
-        </>
-    )
-    }    
+            <br />
+            <br />
+            <Button type="submit" id="submitBtn">
+              Submit
+            </Button>
+          </form>
+        </Container>
+      </div>
+    </>
+  );
+};
 export default ItemForm;

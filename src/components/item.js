@@ -1,20 +1,23 @@
 import React, { useContext } from "react";
 import ItemContext from "../context/itemContext";
 
-const Item = (props) => {
-    const { items,tempItem, } = useContext(ItemContext);
-    const name = tempItem.find(e => e.id === props.item.item_id).item_name
+import Container from "./StyledComponents/ContainerStyled";
+import HeaderTwo from "./StyledComponents/H2Styled";
+import { Button } from "./StyledComponents/FormStyles";
 
-    return(
-        <div>
-            <h3>{name}</h3>
-            <p>description: {props.item.item_listing_description}
-            </p>
-            <p>location: {props.item.locations_where_sold}</p>
-            <p>price: ${props.item.price}</p>
-            <button>Add to Cart</button>
-        </div>
-    )
-}
+const Item = (props) => {
+  const { items, tempItem } = useContext(ItemContext);
+  const name = tempItem.find((e) => e.id === props.item.item_id).item_name;
+
+  return (
+    <Container>
+      <HeaderTwo>{name}</HeaderTwo>
+      <p>description: {props.item.item_listing_description}</p>
+      <p>location: {props.item.locations_where_sold}</p>
+      <p>price: ${props.item.price}</p>
+      <Button>Add to Cart</Button>
+    </Container>
+  );
+};
 
 export default Item;
