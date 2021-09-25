@@ -6,7 +6,7 @@ import Item from "./item";
 import StyledLink from "./StyledComponents/LinkStyled";
 
 const ItemList = () => {
-  const { items, getData, getSaleData, getLocationData, locations, tempItem } =
+  const { items, getData, getSaleData, tempItem } =
     useContext(ItemContext);
 
   useEffect(() => {
