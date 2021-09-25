@@ -1,36 +1,37 @@
 import React from "react";
 import banner from "../images/banner.jpg";
+import Banner from "./StyledComponents/BannerStyled";
+import HeaderTwo from "./StyledComponents/H2Styled";
+import Section from "./StyledComponents/SectionStyled";
 
 export default function Home() {
   return (
     <div className="homePage">
-      <img src={banner} alt="banner of fruit" />
-      <section className="smallIntro">
-        <h2>African Marketplace</h2>
+      <Banner src={banner} alt="banner of fruit" />
+      <Section className="smallIntro">
+        <HeaderTwo>African Marketplace</HeaderTwo>
         <p>
           Sauti Africa empowers small business owners, particularly women, to
           improve their business and economic opportunities to grow out of
           poverty.
         </p>
         <a href="http://localhost:3000/About">Learn More</a>
-      </section>
+      </Section>
 
-      <section id="one">
-        <h2>
-          Arcu aliquet vel lobortis ata nisl eget augue amet aliquet nisl cep
-          donec
-        </h2>
+      <Section id="one">
+        <HeaderTwo>Why we build technologies for women in trade</HeaderTwo>
         <p>
-          Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet
-          eleifend fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus
-          ullamcorper.
+          Using technology to empower women-led businesses has ripple effects
+          that can help create lasting change for households, communities, and
+          market systems. That’s why we put women as traders, producers, and
+          customers at the centre of our products, services and delivery models.
         </p>
         <ul>
-          <li>Lorem</li>
-          <li>ipsom</li>
-          <li>Dolor</li>
+          <li>Trade & Market Information</li>
+          <li>Research & Engagement</li>
+          <li>Leveraging Technology</li>
         </ul>
-      </section>
+      </Section>
     </div>
   );
 }
