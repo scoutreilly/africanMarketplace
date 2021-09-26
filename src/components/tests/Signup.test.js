@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import Signup from '../Signup'
 import userEvent from '@testing-library/user-event'
 
