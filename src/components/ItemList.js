@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 
 import ItemContext from "../context/itemContext";
-import Item from "./item";
+import Item from "./Item";
 
 import StyledLink from "./StyledComponents/LinkStyled";
 
