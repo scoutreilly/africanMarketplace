@@ -5,12 +5,12 @@ import TokenRoute from "./helpers/TokenRoute";
 
 import Home from "./components/Home";
 import About from "./components/About";
-import SignUpForm from "./components/signup";
+import SignUpForm from "./components/Signup";
 import ItemContext from "./context/itemContext";
 import ItemList from "./components/ItemList";
-import ItemForm from "./components/itemForm";
-import Item from "./components/item";
-import Login from "./components/login";
+import ItemForm from "./components/ItemForm";
+import Item from "./components/Item";
+import Login from "./components/Login";
 import { axiosWithAuth } from "./helpers/axiosWithAuth";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { useEffect } from "react";
@@ -84,7 +84,7 @@ function App() {
                 <StyledLink to="/Login">Login</StyledLink>
               </span>
               <span>
-                <StyledLink to="/signup">SignUp</StyledLink>
+                <StyledLink to="/Signup">SignUp</StyledLink>
               </span>
               <span>
                 <StyledLink to="/" onClick={logout}>
@@ -97,11 +97,11 @@ function App() {
             </Nav>
             <Switch>
               <Route exact path="/" component={Home}></Route>
-              <TokenRoute path="/login" component={Login} />
-              <Route path="/signup" component={SignUpForm} />
+              <TokenRoute path="/Login" component={Login} />
+              <Route path="/Signup" component={SignUpForm} />
               {/*create routes to be used later*/}
-              <Route path="/about" component={About}></Route>
-              <Route path="/login" componnet={Login}></Route> [X]
+              <Route path="/About" component={About}></Route>
+              <Route path="/Login" componnet={Login}></Route> [X]
               <ItemContext.Provider
                 value={{
                   items,
