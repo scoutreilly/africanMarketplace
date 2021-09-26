@@ -24,3 +24,13 @@ test('when the fetch button is pressed, the Items component will display', async
         expect(Item).toBeTruthy()
     })
 })
+
+test ('when the fetch button is pressed, this function is called', async () => {
+    render(<Signup Item={testItem} />)
+    const button = screen.queryByRole('button')
+    userEvent.click(button)
+    await awaitFor(() => {
+        const Item = screen.queryAllByTestId('item-container')
+        expect(Item).toBeTruthy()
+    })
+})
