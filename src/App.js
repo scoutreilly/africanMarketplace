@@ -4,8 +4,8 @@ import ProtectedRoute from "./helpers/ProtectedRoute";
 import TokenRoute from "./helpers/TokenRoute";
 
 import Home from "./components/Home";
-import About from "./components/About"
-import SignUpForm from './components/Signup'
+import About from "./components/About";
+import SignUpForm from "./components/Signup";
 import ItemContext from "./context/itemContext";
 import ItemList from "./components/ItemList";
 import ItemForm from "./components/ItemForm";
@@ -100,8 +100,8 @@ function App() {
               <TokenRoute path="/Login" component={Login} />
               <Route path="/Signup" component={SignUpForm} />
               {/*create routes to be used later*/}
-              <Route path="/about" component={About}></Route>
-              <Route path="/login" componnet={Login}></Route> [X]
+              <Route path="/About" component={About}></Route>
+              <Route path="/Login" componnet={Login}></Route> [X]
               <ItemContext.Provider
                 value={{
                   items,
