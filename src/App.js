@@ -3,22 +3,22 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ProtectedRoute from "./helpers/ProtectedRoute";
 import TokenRoute from "./helpers/TokenRoute";
 
-import Home from "./Components/Home";
-import About from "./Components/About";
-import SignUpForm from "./Components/signup";
+import Home from "./components/Home";
+import About from "./components/About";
+import SignUpForm from "./components/Signup";
 import ItemContext from "./context/itemContext";
-import ItemList from "./Components/ItemList";
-import ItemForm from "./Components/itemForm";
-import Item from "./Components/item";
-import Login from "./Components/login";
+import ItemList from "./components/ItemList";
+import ItemForm from "./components/ItemForm";
+import Item from "./components/Item";
+import Login from "./components/Login";
 import { axiosWithAuth } from "./helpers/axiosWithAuth";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { useEffect } from "react";
 
-import HeaderOne from "./Components/StyledComponents/H1Styled";
-import Container from "./Components/StyledComponents/ContainerStyled";
-import Nav from "./Components/StyledComponents/NavStyled";
-import StyledLink from "./Components/StyledComponents/LinkStyled";
+import HeaderOne from "./components/StyledComponents/H1Styled";
+import Container from "./components/StyledComponents/ContainerStyled";
+import Nav from "./components/StyledComponents/NavStyled";
+import StyledLink from "./components/StyledComponents/LinkStyled";
 
 import "./App.css";
 
@@ -90,7 +90,7 @@ function App() {
                 <StyledLink to="/Login">Login</StyledLink>
               </span>
               <span>
-                <StyledLink to="/signup">SignUp</StyledLink>
+                <StyledLink to="/Signup">SignUp</StyledLink>
               </span>
               <span>
                 <StyledLink to="/" onClick={logout}>
@@ -104,11 +104,11 @@ function App() {
             {/* setting up routes for nav items */}
             <Switch>
               <Route exact path="/" component={Home}></Route>
-              <TokenRoute path="/login" component={Login} />
-              <Route path="/signup" component={SignUpForm} />
+              <TokenRoute path="/Login" component={Login} />
+              <Route path="/Signup" component={SignUpForm} />
               {/*create routes to be used later*/}
-              <Route path="/about" component={About}></Route>
-              <Route path="/login" componnet={Login}></Route> [X]
+              <Route path="/About" component={About}></Route>
+              <Route path="/Login" componnet={Login}></Route> [X]
               <ItemContext.Provider
                 value={{
                   items,

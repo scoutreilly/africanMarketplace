@@ -1,13 +1,13 @@
 import React, { useContext, useEffect } from "react";
 
 import ItemContext from "../context/itemContext";
-import Item from "./item";
+import Item from "./Item";
 
 import StyledLink from "./StyledComponents/LinkStyled";
 
 // creating list of products from item.js
 const ItemList = () => {
-  const { items, getData, getSaleData, getLocationData, locations, tempItem } =
+  const { items, getData, getSaleData, tempItem } =
     useContext(ItemContext);
 
   useEffect(() => {
