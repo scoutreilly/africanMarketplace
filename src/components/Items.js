@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/signupForm.css";
+import "../styles/SignUpForm.css";
 
 import Container from "./StyledComponents/ContainerStyled";
 import HeaderOne from "./StyledComponents/H1Styled";
