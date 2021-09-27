@@ -6,6 +6,7 @@ import HeaderOne from "./StyledComponents/H1Styled";
 import { Button, Label, Input } from "./StyledComponents/FormStyles";
 
 const ItemForm = () => {
+  // creating form for adding new products
   const [itemFormValues, setItemFormValues] = useState({
     productName: "",
     description: "",
@@ -13,11 +14,12 @@ const ItemForm = () => {
     qty: 0,
   });
 
+  // onchange settiing state with item form values
   const inputChange = (e) => {
     const { name, value } = e.target;
-    console.log(`name: ${name}, value: ${value}`);
+    // console.log(`name: ${name}, value: ${value}`);
     const inputValue = value;
-    console.log("inputValue: ", inputValue);
+    // console.log("inputValue: ", inputValue);
     setItemFormValues({ ...itemFormValues, [name]: inputValue });
   };
 
@@ -26,6 +28,7 @@ const ItemForm = () => {
     e.preventDefault();
   };
 
+  // rendering new item form
   return (
     <>
       <div className="background-itemForm">

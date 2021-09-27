@@ -23,11 +23,13 @@ import StyledLink from "./Components/StyledComponents/LinkStyled";
 import "./App.css";
 
 function App() {
+  // setting states
   const [items, setItems] = useLocalStorage("items", []);
   const [locations, setLocation] = useLocalStorage("locations", []);
 
   const [tempItem, setTempItem] = useLocalStorage("itemsTemp", []);
 
+  // getting location data
   const getLocationData = () => {
     axiosWithAuth()
       .get("/locations")
@@ -38,6 +40,7 @@ function App() {
       .catch((err) => console.log(err));
   };
 
+  // temp item data
   const getData = () => {
     axiosWithAuth()
       .get("/items")
@@ -48,6 +51,7 @@ function App() {
       .catch((err) => console.log(err));
   };
 
+  // sale data
   const getSaleData = () => {
     axiosWithAuth()
       .get("/items-for-sale")
@@ -62,11 +66,13 @@ function App() {
     getLocationData();
   }, []);
 
+  // removing token to logout users
   const logout = () => {
     localStorage.removeItem("token");
     window.location.href = "/";
   };
 
+  // displaying homepage and nav bar
   return (
     <Container className="container">
       <header>
@@ -95,6 +101,7 @@ function App() {
                 <StyledLink to="/listings">Listings</StyledLink>
               </span>
             </Nav>
+            {/* setting up routes for nav items */}
             <Switch>
               <Route exact path="/" component={Home}></Route>
               <TokenRoute path="/login" component={Login} />

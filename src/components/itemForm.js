@@ -10,6 +10,7 @@ import { Form, Button, Label, Input } from "./StyledComponents/FormStyles";
 import StyledLink from "./StyledComponents/LinkStyled";
 import Select from "./StyledComponents/SelectStyled";
 
+// creating form for adding new items
 const ItemForm = () => {
   const { items, setItems, tempItem, setTempItem } = useContext(ItemContext);
 
@@ -22,10 +23,11 @@ const ItemForm = () => {
     qty: 0,
   };
 
-  console.log(tempItem.slice(-1)[0].id);
-
+  // console.log(tempItem.slice(-1)[0].id);
+  // setting state of values
   const [value, handleChanges] = useForm(initialValues);
 
+  // posting new item to our item api
   const sale = () => {
     const newItemForSale = {
       item_id: tempItem.slice(-1)[0].id,
@@ -46,6 +48,7 @@ const ItemForm = () => {
       });
   };
 
+  //confirm new item with a window alert
   const confirm = () => {
     if (window.confirm("Are all details for your item correct?")) {
       sale();
@@ -54,6 +57,7 @@ const ItemForm = () => {
     }
   };
 
+  // posting new items
   const onFormSubmit = (e) => {
     e.preventDefault();
 
@@ -79,6 +83,7 @@ const ItemForm = () => {
 
   useEffect(() => {});
 
+  // creating form for new iteems
   return (
     <>
       <div className="background-itemForm">

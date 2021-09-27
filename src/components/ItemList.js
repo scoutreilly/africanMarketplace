@@ -5,6 +5,7 @@ import Item from "./item";
 
 import StyledLink from "./StyledComponents/LinkStyled";
 
+// creating list of products from item.js
 const ItemList = () => {
   const { items, getData, getSaleData, getLocationData, locations, tempItem } =
     useContext(ItemContext);
@@ -17,6 +18,7 @@ const ItemList = () => {
   console.log(items);
   console.log(tempItem);
 
+  //looping through items to generate list
   return (
     <>
       <StyledLink to="/addItem">Add Listing</StyledLink>

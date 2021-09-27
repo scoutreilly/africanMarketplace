@@ -6,6 +6,7 @@ import { Form, Label, Input } from "./StyledComponents/FormStyles";
 import HeaderOne from "./StyledComponents/H1Styled";
 
 class Login extends Component {
+  // greating login form
   constructor(props) {
     super(props);
 
@@ -16,18 +17,21 @@ class Login extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // setting password state with new value
   passwordhandler = (event) => {
     this.setState({
       password: event.target.value,
     });
   };
 
+  // username state and value
   usernamehandler = (event) => {
     this.setState({
       username: event.target.value,
     });
   };
 
+  // sending data to login api
   handleSubmit = (event) => {
     this.setState({
       password: "",
@@ -50,6 +54,7 @@ class Login extends Component {
       });
   };
 
+  // displaying the login form
   render() {
     return (
       <Container>

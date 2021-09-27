@@ -5,6 +5,7 @@ import Container from "./StyledComponents/ContainerStyled";
 import HeaderTwo from "./StyledComponents/H2Styled";
 import { Button } from "./StyledComponents/FormStyles";
 
+// displaying items
 const Item = (props) => {
   const { items, tempItem } = useContext(ItemContext);
   const name = tempItem.find((e) => e.id === props.item.item_id).item_name;

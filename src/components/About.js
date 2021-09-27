@@ -7,10 +7,10 @@ import Image from "./StyledComponents/ImageStyled";
 import { FlexDiv, FlexElement } from "./StyledComponents/FlexStyles";
 
 export default function About() {
+  //Creating the about page using styled components and some jumble text for filler
   return (
     <div>
       <Container id="aboutIntro">
-        {/*change to styled intro */}
         <FlexDiv className="flexConatiner">
           <FlexElement>
             <HeaderTwo style={{ padding: "30% 30%" }}>OUR STORY</HeaderTwo>

@@ -10,6 +10,7 @@ import Image from "./StyledComponents/ImageStyled";
 
 import pic4 from "../images/pic04.jpeg";
 
+//Creating the home page using styled components and some filler text from the original website
 export default function Home() {
   return (
     <div className="homePage">

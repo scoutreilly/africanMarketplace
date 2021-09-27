@@ -6,6 +6,7 @@ import { Form, Label, Input } from "./StyledComponents/FormStyles";
 import HeaderOne from "./StyledComponents/H1Styled";
 
 class SignUpForm extends Component {
+  // Creating the sign up form for new accounts
   constructor(props) {
     super(props);
 
@@ -24,11 +25,12 @@ class SignUpForm extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  // onchange handler to set state
   changeHandler = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+  // setting state of checkbox, checked or not checked and set the value
   sellerhandler = (event) => {
     this.setState({
       seller:
@@ -40,7 +42,7 @@ class SignUpForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
+    // sending data to user api
     axios
       .post(
         "https://ptct-african-marketplace-5.herokuapp.com/api/auth/register",
@@ -56,6 +58,7 @@ class SignUpForm extends Component {
   };
 
   render() {
+    // displaying the user registration form
     const { first_name, last_name, password, email, username } = this.state;
     return (
       <Container>
