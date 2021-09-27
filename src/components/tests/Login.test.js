@@ -33,6 +33,7 @@ test('renders TWO error messages if user enters no values into any fields.', asy
     const error1 = screen.queryAllByText(/error/i)
     expect(error1).toBeTruthy()
     const error2 = screen.queryAllByText(/error/i)
+    expect (error2).toBeTruthy()
 });
 
 test('renders all username and password text when submitted. Does NOT render message if message is not submitted.', async () => {
